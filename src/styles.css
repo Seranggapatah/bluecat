@@ -1,50 +1,73 @@
 body {
   font-family: sans-serif;
-  overflow: clip;
   margin: 0;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f3;
 }
 
-#rive-canvas {
+.screens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.screen-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 16px;
+}
+
+.screen-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  letter-spacing: 0.02em;
+}
+
+.phone {
+  position: relative;
+  height: min(760px, calc(100dvh - 100px));
+  aspect-ratio: 9 / 19.5;
+  max-width: calc(100vw - 32px);
+  border: 1px solid #ccc;
+  overflow: hidden;
+  background-color: rgb(229, 214, 214);
+}
+
+.rive-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 100dvh;
-  background-color: rgb(229, 214, 214);
-  pointer-events: none;
-  z-index: -1;
-}
-
-.controls {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 20;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
-  width: min(100% - 32px, 960px);
+  height: 100%;
   pointer-events: none;
 }
 
 .state-buttons {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 24px);
+  box-sizing: border-box;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
   padding: 8px;
-  border-radius: 999px;
-  background: #fff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   pointer-events: auto;
 }
 
 .state-buttons button {
   min-width: 72px;
   padding: 8px 14px;
-  border: 1px solid transparent;
-  border-radius: 999px;
   background: transparent;
   color: #111;
   font-size: 15px;
@@ -67,7 +90,7 @@ body {
 }
 
 .state-buttons button:hover:not(:disabled) {
-  background: #f3f3f3;
+  background: #444;
 }
 
 .state-buttons button.is-active {

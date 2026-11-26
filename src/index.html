@@ -3,15 +3,68 @@
   <head>
     <title>Kanguru Rive</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
   <body>
-    <canvas id="rive-canvas"></canvas>
-<div class="state-buttons">
-    <button id="button">Happy</button>
-    <button id="button2">Resting / Break Animation</button>
-    <button id="button3">Reading (Idle Loop)</button>
-  </div>
+    <div class="screens">
+      <div class="screen-wrapper">
+        <div class="screen-label">Screen 1</div>
+        <div class="phone">
+          <canvas id="canvas-openbag" class="rive-canvas"></canvas>
+          <div class="state-buttons">
+            <button id="btn-openbag">Cat Open Bag</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-wrapper">
+        <div class="screen-label">Screen 2</div>
+        <div class="phone">
+          <canvas id="canvas-side" class="rive-canvas"></canvas>
+          <div class="state-buttons">
+            <button id="btn-in-side">In Cat Side</button>
+            <button id="btn-out-side">Out Cat Side</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-wrapper">
+        <div class="screen-label">Screen 3</div>
+        <div class="phone">
+          <canvas id="canvas-writing" class="rive-canvas"></canvas>
+          <div class="state-buttons">
+            <button id="btn-write">Write</button>
+            <button id="btn-lookup">Look Up</button>
+            <button id="btn-happy">Happy at User</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-wrapper">
+        <div class="screen-label">Screen 4</div>
+        <div class="phone">
+          <canvas id="canvas-reading" class="rive-canvas"></canvas>
+        </div>
+      </div>
+
+      <div class="screen-wrapper">
+        <div class="screen-label">Screen 5</div>
+        <div class="phone">
+          <canvas id="canvas-box" class="rive-canvas"></canvas>
+          <div class="state-buttons">
+            <button id="btn-open-box">Open Box</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-wrapper">
+        <div class="screen-label">Screen 6</div>
+        <div class="phone">
+          <canvas id="canvas-standing" class="rive-canvas"></canvas>
+        </div>
+      </div>
+    </div>
     <script src="./index.ts" type="module"></script>
   </body>
 </html>
